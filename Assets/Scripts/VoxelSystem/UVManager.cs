@@ -5,49 +5,7 @@ using UnityEngine;
 public class UVManager
 {
 
-    /*public static Vector2[] GetStoneUV()
-    {
-        Vector2[] uv = new Vector2[4];
-        uv[0] = new Vector2(0f, .5f);
-        uv[1] = new Vector2(.5f, .5f);
-        //--
-        uv[2] = new Vector2(.5f, 1f);
-        uv[3] = new Vector2(0f, 1f);
-        return uv;
-    }
-
-    public static Vector2[] GetGrassTopUV()
-    {
-        Vector2[] uv = new Vector2[4];
-        uv[0] = new Vector2(.5f, .5f);
-        uv[1] = new Vector2(1f, .5f);
-        //--
-        uv[2] = new Vector2(1f, 1f);
-        uv[3] = new Vector2(.5f, 1f);
-        return uv;
-    }
-
-    public static Vector2[] GetGrassSideUV()
-    {
-        Vector2[] uv = new Vector2[4];
-        uv[0] = new Vector2(0f, 0f);
-        uv[1] = new Vector2(.5f, 0f);
-        //--
-        uv[2] = new Vector2(.5f, .5f);
-        uv[3] = new Vector2(0f, .5f);
-        return uv;
-    }
-
-    public static Vector2[] GetDirtUV()
-    {
-        Vector2[] uv = new Vector2[4];
-        uv[0] = new Vector2(.5f, 0f);
-        uv[1] = new Vector2(1f, 0f);
-        //--
-        uv[2] = new Vector2(1f, .5f);
-        uv[3] = new Vector2(.5f, .5f);
-        return uv;
-    }*/
+    // Holds arrays of uv coordinates
 
     public static Vector2[] GetStoneUV()
     {

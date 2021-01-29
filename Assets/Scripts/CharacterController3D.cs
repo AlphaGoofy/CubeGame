@@ -38,14 +38,6 @@ public class CharacterController3D : MonoBehaviour
             {
                 float distance = lastGroundPosition.y - transform.position.y;
 
-                if (distance < 0)
-                    distance *= (-1.0f);
-
-                if (distance > 5.0f)
-                {
-                    Debug.Log("Fall distance: " + distance + "    (dist < 5 is ignored)");
-                }
-
                 falling = false;
             }
 

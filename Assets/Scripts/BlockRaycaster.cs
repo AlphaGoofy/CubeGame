@@ -25,15 +25,12 @@ public class BlockRaycaster : MonoBehaviour
 
             if (Physics.Raycast(ray, out RaycastHit hit, 20.0f, layerMask))
             {
-                print(hit.point);
 
-
+                print("---");
 
                 //Vector3Int v = new Vector3Int(Mathf.FloorToInt(hit.point.x), Mathf.FloorToInt(hit.point.y), Mathf.FloorToInt(hit.point.z));
 
-                //Vector3 vector = new Vector3(v.x, v.y, v.z) - (ray.direction * 0.25f);
-
-                /*Vector3 vector = hit.point - (ray.direction * 0.5f);
+                Vector3 vector = new Vector3(hit.point.x, hit.point.y, hit.point.z) - ray.direction * .25f;
 
                 int iX = Mathf.FloorToInt(hit.point.x / 16);// * (v.x < 0 ? -1 : 1);
                 int iZ = Mathf.FloorToInt(hit.point.z / 16);// * (v.z < 0 ? -1 : 1);
@@ -52,8 +49,8 @@ public class BlockRaycaster : MonoBehaviour
 
                 print(maxA + "|" + maxB);
 
-                int lX = Mathf.RoundToInt(vector.x);
-                int lZ = Mathf.RoundToInt(vector.z);
+                int lX = Mathf.FloorToInt(vector.x);
+                int lZ = Mathf.FloorToInt(vector.z);
 
                 if (lX < 0)
                     lX *= -1;
@@ -65,10 +62,9 @@ public class BlockRaycaster : MonoBehaviour
                 
                 print(x + "@" + z);
 
-                gameManager.world.GetChunk(chunkId).chunkBlocks[x, Mathf.RoundToInt(vector.y), z] = 1;
+                gameManager.world.GetChunk(chunkId).chunkBlocks[x, Mathf.FloorToInt(vector.y), z] = 1;
                 gameManager.world.GetChunk(chunkId).CalculateChunkMesh();
                 gameManager.world.UpdateAllMeshes();
-                */
             }
         }
     }

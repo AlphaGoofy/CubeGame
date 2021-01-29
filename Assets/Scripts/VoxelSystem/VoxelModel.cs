@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class VoxelModel
 {
+
+    // Holds the data a chunk needs to create its mesh, maybe replace with struct
+
     public List<Vector3> vertices;
     public List<int> triangles;
     public List<Vector2> uv;

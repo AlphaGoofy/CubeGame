@@ -4,20 +4,22 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    // Prefab to create new chunks
     public GameObject chunkPrefab;
-
+    
     public Transform player;
-
+    // Reference to the current world, no MonoBehaviour 
     public VoxelWorld world;
-
+    // Current id of the chunk the player is in
     public int currentChunkX, currentChunkZ;
-
+    
     public string currentChunkId, lastChunkId;
-
+    // Time to update all chunks
     public long lastUpdateTime;
 
     void Start()
     {
+        // Create a new world and determine the chunk the player is in
         world = new VoxelWorld(chunkPrefab);
 
         currentChunkX = Mathf.FloorToInt(player.position.x / 16);
@@ -27,12 +29,14 @@ public class GameManager : MonoBehaviour
         lastChunkId = currentChunkId;
 
         //world.PerformWorldUpdateAccordingToPlayerPosition(currentChunkId);
+        // Create and update the meshes around the player
         world.LoadChunksAccordingToPlayerPosition(currentChunkId);
         world.UpdateAllMeshes();
     }
 
     void Update()
     {
+        // Check whether the player has entered a new chunk or not
         currentChunkX = Mathf.FloorToInt(player.position.x / 16);
         currentChunkZ = Mathf.FloorToInt(player.position.z / 16);
         if(currentChunkId != (currentChunkX + "." + currentChunkZ))
@@ -45,6 +49,7 @@ public class GameManager : MonoBehaviour
             System.Diagnostics.Stopwatch sw = new System.Diagnostics.Stopwatch();
             sw.Start();
             //world.PerformWorldUpdateAccordingToPlayerPosition(currentChunkId);
+            // Load the new chunks and update the meshes
             world.LoadChunksAccordingToPlayerPosition(currentChunkId);
             world.UpdateAllMeshes();
             sw.Stop();
